@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="card">
+    <form [formGroup]="form">
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input formControlName="name" type="text" class="form-control" id="inputEmail3" placeholder="name">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">dept</label>
+        <div class="col-sm-10">
+          <input formControlName="dept" type="text" class="form-control" id="inputEmail3" placeholder="dept">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">salary</label>
+        <div class="col-sm-10">
+          <input formControlName="salary" type="number" class="form-control" id="inputEmail3" placeholder="salary">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button *ngIf="!url" type="submit" (click) ="crearEmpleado()" class="btn btn-primary">Agregar</button>
+          <button *ngIf="url" type="submit" (click) ="actualizarEmpleado()" class="btn btn-primary">editar</button>
+        </div>
+      </div>
+    </form>
+
+   <pre> {{ form.value | json }} </pre>
+  </div>
+</div>
