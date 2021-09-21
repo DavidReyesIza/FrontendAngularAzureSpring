@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  base_url: 'https://springbootazuresql.azurewebsites.net'
+  base_url: 'https://apimanagementazurespringangular.azure-api.net'
 
 };
 

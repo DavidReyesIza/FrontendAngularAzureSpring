@@ -11,16 +11,27 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
 
+  get headers(){
+
+    return{
+      headers:{
+        'Ocp-Apim-Subscription-Key': 'c9f74cae76704985874bf0bc5bbfe7b5',
+        'Ocp-Apim-Trace':'true'
+      }
+
+    }
+  }
+
   postEmployee(data: employee){
-    return this.http.post<employee>(this.urlBase+'/employee',data);
+    return this.http.post<employee>(this.urlBase+'/employee',data, this.headers);
   }
 
   getEmployees(){
-    return this.http.get<employee>(this.urlBase + '/employees');
+    return this.http.get<employee>(this.urlBase + '/employees',this.headers);
   }
 
   putEmployees(data: employee){
-    return this.http.put<employee>(this.urlBase + '/employee/' + data.id , data);
+    return this.http.put<employee>(this.urlBase + '/employee/' + data.id , data,this.headers);
   }
 
   deleteEmployee(id: number){
