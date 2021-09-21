@@ -35,10 +35,10 @@ export class EmployeeService {
   }
 
   deleteEmployee(id: number){
-    return this.http.delete<employee>(this.urlBase + '/employee/' +id);
+    return this.http.delete<employee>(this.urlBase + '/employee/' +id, this.headers);
   }
 
   getEmployee(id: number){
-    return this.http.get<employee>(this.urlBase + '/employee/'+ id);
+    return this.http.get<employee>(this.urlBase + '/employee/'+ id,this.headers);
   }
 }
